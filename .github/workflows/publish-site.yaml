@@ -1,0 +1,33 @@
+name: Build and publish site to gh-pages
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Prepare gh-pages
+      uses: actions/configure-pages@v5
+    - name: Prepare ringfairy
+      run: cargo install 
+    - name: Build webring
+      run: ringfairy
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        # Upload entire repository
+        path: './webring/'
+    - name: Deploy webring
+      id: deployment
+      uses: actions/deploy-pages@v4
+
