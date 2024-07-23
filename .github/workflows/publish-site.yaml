@@ -19,7 +19,7 @@ jobs:
     - name: Prepare gh-pages
       uses: actions/configure-pages@v5
     - name: Prepare ringfairy
-      run: cargo install 
+      run: cargo install ringfairy
     - name: Build webring
       run: ringfairy
     - name: Upload artifact
