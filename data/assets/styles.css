@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap");
+
+@font-face {
+    font-family: "Poppings";
+    src: 
+        url("./Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Poppings SemiBold"; 
+    src: url("./Poppins-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    font-family: sans-serif;
+    line-height: 1.6;
+    background-image: url("./caketexture.png");
+    color: #fff;
+    max-width: 80rem;
+    margin: auto;
+
+
+    font-family: "Poppings", sans-serif;
+}
+
+header, section, footer {
+    margin: 20px 0;
+    text-align: center;
+    background-color: #00000088;
+    padding: 30px;
+}
+
+header, section {
+    --mask: 
+    linear-gradient(#000 0 0) center/calc(100% - 20px) calc(100% - 20px) no-repeat,
+    conic-gradient(from  135deg at top   ,#0000,#000 1deg 89deg,#0000 90deg) 0 0   /20px 10px space no-repeat,
+    conic-gradient(from  -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 0 100%/20px 10px space no-repeat,
+    conic-gradient(from   45deg at left  ,#0000,#000 1deg 89deg,#0000 90deg) 0 0   /10px 20px no-repeat space,
+    conic-gradient(from -135deg at right ,#0000,#000 1deg 89deg,#0000 90deg) 100% 0/10px 20px no-repeat space;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+
+section {
+    width: max-content;
+}
+
+footer {
+    padding: 10px 20px;
+    --mask: 
+    linear-gradient(#000 0 0) 50%/calc(100% - 18.5px) calc(100% - 18.5px) no-repeat,
+    radial-gradient(farthest-side,#000 98%,#0000) 0 0/20px 20px round;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+
+header > img {
+    width: 50%;
+}
+
+.pretty {
+    font-family: "Mochiy Pop One", sans-serif;
+}
+
+a {
+    color: #E8A7DE;
+    text-decoration: underline;
+    font-weight: 600;
+    font-family: "Poppings SemiBold", sans-serif;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    font-size: 1em;
+    margin: 10px auto;
+}
+
+tr {
+    margin-bottom: 10px;
+}
+
+tr :is(td,th):first-of-type {
+    display: none;
+}
+
+th,
+td {
+    border-bottom: 2px dashed #8b6876;
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 90%;
+    }
+
+    table {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        display: block;
+        text-align: left;
+        white-space: normal;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+    }
+}
